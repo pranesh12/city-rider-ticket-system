@@ -42,7 +42,6 @@ const Destination = () => {
                       onChange={handlePick}
                       type="text"
                       className="form-control"
-                      required
                     />
                   </div>
                   <div className="form-group">
@@ -51,7 +50,6 @@ const Destination = () => {
                       onChange={handleTo}
                       type="text"
                       className="form-control"
-                      required
                     />
                   </div>
                   <div className="form-group">

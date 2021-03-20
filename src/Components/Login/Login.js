@@ -15,7 +15,7 @@ function Login() {
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
 
-  var provider = new firebase.auth.FacebookAuthProvider();
+  let provider = new firebase.auth.FacebookAuthProvider();
   const [logInUser, setLogInUser] = useContext(userContext);
   const [newUser, setNewUser] = useState(false);
 
@@ -79,7 +79,7 @@ function Login() {
         .createUserWithEmailAndPassword(user.email, user.password)
         .then((userCredential) => {
           // Signed in
-          var user = userCredential.user;
+          let user = userCredential.user;
           const { displayName, email, photoURL } = user;
           const singnUpInfo = {
             name: displayName,
@@ -92,8 +92,8 @@ function Login() {
           history.replace(from);
         })
         .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
+          let errorCode = error.code;
+          let errorMessage = error.message;
           const singnUpInfo = {
             isSignup: false,
             sigunUpMeassage: errorMessage,
@@ -111,7 +111,7 @@ function Login() {
         .signInWithEmailAndPassword(user.email, user.password)
         .then((userCredential) => {
           // Signed in
-          var user = userCredential.user;
+          let user = userCredential.user;
           const { displayName, email, photoURL } = user;
           const singInUser = {
             name: displayName,
@@ -126,8 +126,8 @@ function Login() {
           history.replace(from);
         })
         .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
+          let errorCode = error.code;
+          let errorMessage = error.message;
           const singInUser = {
             isLogIn: false,
             error: errorMessage,
@@ -140,12 +140,12 @@ function Login() {
   };
 
   const handleGoogleSignIn = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
+    let provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .signInWithPopup(provider)
       .then((result) => {
-        var user = result.user;
+        let user = result.user;
         const { displayName, photoURL, email } = user;
         const GoogleBookUser = {
           name: displayName,
@@ -159,10 +159,10 @@ function Login() {
         history.replace(from);
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        let email = error.email;
+        let credential = error.credential;
         console.log(errorCode, errorMessage, email, credential);
       });
   };

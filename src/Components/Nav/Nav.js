@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { userContext } from "../../App";
 
 const Nav = () => {
-  const [logInUser, setLogInUser] = useContext(userContext);
+  const [logInUser] = useContext(userContext);
   return (
     <>
       <div className="container header_nav mt-3">

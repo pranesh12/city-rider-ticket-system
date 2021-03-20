@@ -5,7 +5,7 @@ const TransportCards = ({ tansports }) => {
   const { image, type, id } = tansports;
   return (
     <>
-      <div mt-5>
+      <div className="mt-3  mx-auto">
         <Link to={`/destination/${id}`}>
           <div
             className="card pt-4  pl-3 pr-3 shadow border-0"

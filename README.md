@@ -5,5 +5,7 @@ you can login via google and email and password.
 
 Note:You should select Card based on that type of ticket you want to buy.
 
+Issue:Error meassage of password validation is not working properly but sign up validation is working fine
+
 This app is hosted in firebase
 App Link:https://praneshck-city-riders.web.app/

@@ -12,12 +12,17 @@ const Home = () => {
   return (
     <>
       <main className="main container">
+        <h2 className="text-center mt-5  text-uppercase">
+          Buy Your Tickets Here
+        </h2>
         <div className="cards container mt-5 p-3 allCard">
           <div className="row">
-            <div className="rounded card-deck">
-              {tansports.map((tp) => (
-                <TransportCards tansports={tp} key={tp.id}></TransportCards>
-              ))}
+            <div className="">
+              <div className="rounded card-deck">
+                {tansports.map((tp) => (
+                  <TransportCards tansports={tp} key={tp.id}></TransportCards>
+                ))}
+              </div>
             </div>
           </div>
         </div>
