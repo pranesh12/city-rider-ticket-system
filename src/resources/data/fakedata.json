@@ -1,17 +1,21 @@
 [{
     "id": 1,
     "type": "Bus",
+    "price":500,
     "image": "https://assetsds.cdnedge.bluemix.net/sites/default/files/styles/very_big_1/public/feature/images/http_cdn.cnn_.com_cnnnext_dam_assets_200826183306-adventures-overlandimage-from-ios.jpg?itok=McotSUS2"
   }, {
     "id": 2,
     "type": "Car",
+    "price":3000,
     "image": "https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg"
   }, {
     "id": 3,
     "type": "Bike",
+    "price":1000,
     "image": "https://ic1.maxabout.us/autos/tw_india//N/2020/9/new-honda-cb350-india.jpg"
   }, {
     "id": 4,
     "type": "Train",
+    "price":1000,
     "image": "https://i.guim.co.uk/img/media/f2d91a0ed3de07d545672368a385175ff975bb0b/0_529_5492_3296/master/5492.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9fcbf499726cd8411c5d84bbdda9d35b"
   }]

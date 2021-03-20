@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import map from "../../resources/images/Map.png";
 import trasnporstData from "../../resources/data/fakedata.json";
-import { Map, GoogleApiWrapper } from "google-maps-react";
 
 const Destination = () => {
   const { typeId } = useParams();
@@ -11,6 +10,7 @@ const Destination = () => {
   const [pickTo, setPickTo] = useState();
   const [submited, setSubmited] = useState(false);
   const [date, setDate] = useState();
+  const [ticketCount, setTicketCount] = useState();
 
   const handlePick = (e) => {
     setPickFrom(e.target.value);
@@ -25,10 +25,8 @@ const Destination = () => {
   const hanldeDate = (e) => {
     setDate(e.target.value);
   };
-
-  const mapStyles = {
-    width: "100%",
-    height: "100%",
+  const hanldeTicketCount = (e) => {
+    setTicketCount(e.target.value);
   };
   return (
     <>
@@ -58,7 +56,11 @@ const Destination = () => {
                   </div>
                   <div className="form-group">
                     <label className="mr-2">Date:</label>
-                    <input onChange={hanldeDate} type="date" name="birthday" />
+                    <input onChange={hanldeDate} type="date" name="Date" />
+                  </div>
+                  <div className="form-group">
+                    <label className="mr-2">How Much Ticket?:</label>
+                    <input onChange={hanldeTicketCount} name="count" />
                   </div>
                   <button
                     onClick={hanldeSubmit}
@@ -75,6 +77,7 @@ const Destination = () => {
               <div className="map-form ">
                 <h2>From : {pickFrom}</h2>
                 <h2>To : {pickTo}</h2>
+                <h2>Price:{ticketCount * transport.price}</h2>
                 <h2>Date: {date}</h2>
 
                 <img className="img img-fluid" src={transport.image} alt="" />
@@ -83,12 +86,7 @@ const Destination = () => {
           )}
 
           <div className="col-md-8 ">
-            <Map
-              google={this.props.google}
-              zoom={8}
-              style={mapStyles}
-              initialCenter={{ lat: 47.444, lng: -122.176 }}
-            />
+            <img className="img-fluid" src={map} alt="" />
           </div>
         </div>
       </div>

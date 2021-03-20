@@ -40,6 +40,11 @@ const Nav = () => {
                   Login
                 </Link>
               </li>
+              <li className="nav-item   pr-3 font-weight-bold">
+                <Link to="/login" className="nav-link text-dark">
+                  {logInUser.name || logInUser.email || ""}
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
