@@ -73,10 +73,10 @@ const Destination = () => {
           ) : (
             <div className="col-md-4 map-left">
               <div className="map-form ">
-                <h2>From : {pickFrom}</h2>
-                <h2>To : {pickTo}</h2>
-                <h2>Price:{ticketCount * transport.price}</h2>
-                <h2>Date: {date}</h2>
+                <p>From: {pickFrom}</p>
+                <p>To: {pickTo}</p>
+                <p>Price: {ticketCount * transport.price}</p>
+                <p>Date: {date}</p>
 
                 <img className="img img-fluid" src={transport.image} alt="" />
               </div>

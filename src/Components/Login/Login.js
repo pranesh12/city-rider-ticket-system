@@ -169,11 +169,13 @@ function Login() {
 
   return (
     <div className="container">
-      <h1 className="text-center">Sign In or Sign UP</h1>
+      <h5 className="text-center mt-5 mb-5 text-uppercase text-muted">
+        Sign In or Sign UP
+      </h5>
 
       {/* Login form */}
 
-      <form className="mt-5 mb-5" onSubmit={hanldeBlur}>
+      <form className="mt-5 mb-5 border p-5" onSubmit={hanldeBlur}>
         <div className="form-group form-check">
           <input
             className="form-check-input"
@@ -181,12 +183,12 @@ function Login() {
             name="newUser"
             onChange={() => setNewUser(!newUser)}
           />
-          <label className="form-check-label">
+          <label className="form-check-label text-uppercase text-muted ">
             New To here? Sign Up Or Sign here below
           </label>
         </div>
         {newUser && (
-          <div className="form-group">
+          <div className="form-group ">
             <input
               className="form-control"
               type="text"
@@ -220,7 +222,7 @@ function Login() {
 
         <div className="form-group">
           <input
-            className="btn w-100 btn-primary mt-2"
+            className="btn w-100 btn-primary mt-2 bg-success rounded  text-uppercase border-0"
             type="submit"
             onClick={handleSubmit}
             value={newUser ? "Sign UP " : "Sign In"}
@@ -228,19 +230,21 @@ function Login() {
         </div>
         <div className="form-group">
           <input
-            className=" btn w-100 btn-info mt-3"
+            className=" btn w-100 btn-info mt-3 bg-danger rounded text-uppercase border-0"
             type="submit"
             onClick={handleSignOut}
             value="sign out"
           />
         </div>
+
+        <p className="text-center font-weight-bold">Or</p>
+        <button
+          className="btn w-100 btn-warning mt-2 bg-success  text-uppercase rounded w-50 border-0 text-white"
+          onClick={handleGoogleSignIn}
+        >
+          Login with Google
+        </button>
       </form>
-      <button
-        className="btn w-100 btn-warning mt-2"
-        onClick={handleGoogleSignIn}
-      >
-        Login with Google
-      </button>
 
       {user.isLogIn ? (
         <p style={{ color: "green" }}>User Logged In sucessFully</p>
