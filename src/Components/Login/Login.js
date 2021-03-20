@@ -139,33 +139,6 @@ function Login() {
     }
   };
 
-  const handleFacebookSignIn = () => {
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        var user = result.user;
-        const { displayName, photoURL, email } = user;
-        const faceBookUser = {
-          name: displayName,
-          email: email,
-          photo: photoURL,
-          isLogIn: true,
-          isSignup: true,
-        };
-        setUser(faceBookUser);
-        setLogInUser(faceBookUser);
-        history.replace(from);
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
-        console.log(errorCode, errorMessage, email, credential);
-      });
-  };
-
   const handleGoogleSignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase
@@ -196,12 +169,9 @@ function Login() {
 
   return (
     <div className="container">
-      <h1>From Validation</h1>
-      <h2>{user.email}</h2>
-      <h2>{user.name}</h2>
-      <br />
+      <h1 className="text-center">Sign In or Sign UP</h1>
 
-      {/* lasjdlfjas */}
+      {/* Login form */}
 
       <form className="mt-5 mb-5" onSubmit={hanldeBlur}>
         <div className="form-group form-check">
@@ -265,13 +235,6 @@ function Login() {
           />
         </div>
       </form>
-
-      <button
-        className="btn w-100 btn-primary mt-2"
-        onClick={handleFacebookSignIn}
-      >
-        Sign in with facebook
-      </button>
       <button
         className="btn w-100 btn-warning mt-2"
         onClick={handleGoogleSignIn}
