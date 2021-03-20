@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import map from "../../resources/images/Map.png";
 import trasnporstData from "../../resources/data/fakedata.json";
+import SimpleMap from "../GoogleMap/GoogleMap";
 
 const Destination = () => {
   const { typeId } = useParams();
@@ -84,7 +85,8 @@ const Destination = () => {
           )}
 
           <div className="col-md-8 ">
-            <img className="img-fluid" src={map} alt="" />
+            {/* <img className="img-fluid" src={map} alt="" /> */}
+            <SimpleMap></SimpleMap>
           </div>
         </div>
       </div>
