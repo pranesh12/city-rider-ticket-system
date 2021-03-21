@@ -76,7 +76,8 @@ const Destination = () => {
               <div className="map-form ">
                 <p>From: {pickFrom}</p>
                 <p>To: {pickTo}</p>
-                <p>Price: {ticketCount * transport.price}</p>
+                <p>Ticket Cost ${transport.price}</p>
+                <p>Total: ${ticketCount * transport.price}</p>
                 <p>Date: {date}</p>
 
                 <img className="img img-fluid" src={transport.image} alt="" />
