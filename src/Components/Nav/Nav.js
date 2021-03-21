@@ -19,7 +19,11 @@ const Nav = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <p className="navbar-brand font-weight-bold">City Riders</p>
+          <p className="navbar-brand ">
+            <Link to="/login" className="nav-link text-dark">
+              {logInUser.name || logInUser.email || ""}
+            </Link>
+          </p>
 
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -41,8 +45,8 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item   pr-3 font-weight-bold">
-                <Link to="/login" className="nav-link text-dark">
-                  {logInUser.name || logInUser.email || ""}
+                <Link to="/" className="nav-link text-dark">
+                  City Riders
                 </Link>
               </li>
             </ul>
