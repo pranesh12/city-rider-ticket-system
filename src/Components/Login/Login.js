@@ -268,13 +268,14 @@ function Login() {
         </div>
 
         <p className="text-center font-weight-bold">Or</p>
-        <button
-          className="btn w-100 btn-warning mt-2 bg-success  text-uppercase rounded w-50 border-0 text-white"
-          onClick={handleGoogleSignIn}
-        >
-          Login with Google
-        </button>
       </form>
+
+      <button
+        className="btn w-100 btn-warning mt-2 bg-success mx-auto  text-uppercase rounded w-50 border-0 text-white"
+        onClick={handleGoogleSignIn}
+      >
+        Login with Google
+      </button>
 
       {user.isLogIn ? (
         <p style={{ color: "green" }}>User Logged In sucessFully</p>
