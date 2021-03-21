@@ -15,8 +15,8 @@ const Home = () => {
         <h2 className="text-center mt-5  text-uppercase">
           Buy Your Tickets Here
         </h2>
-        <div className="cards container mt-5 p-3 allCard">
-          <div className="row">
+        <div className="cards container-sm mt-5 p-3 allCard">
+          <div className="row justify-content-center">
             <div className="">
               <div className="rounded card-deck">
                 {tansports.map((tp) => (
