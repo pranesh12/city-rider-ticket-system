@@ -14,6 +14,8 @@ function Login() {
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
+  let [password, setPassword] = useState();
+  let [confirmPassword, setConfirmPassword] = useState();
 
   let provider = new firebase.auth.FacebookAuthProvider();
   const [logInUser, setLogInUser] = useContext(userContext);
@@ -167,6 +169,16 @@ function Login() {
       });
   };
 
+  const handlePassword = (e) => {
+    if (e.target.name === "password") {
+      setPassword(e.target.value);
+    }
+
+    if (e.target.name === "ConfirmPassword") {
+      setConfirmPassword(e.target.value);
+    }
+  };
+
   return (
     <div className="container">
       <h5 className="text-center mt-5 mb-5 text-uppercase text-muted">
@@ -213,12 +225,30 @@ function Login() {
           <input
             className="form-control"
             type="password"
+            onChange={handlePassword}
             onBlur={hanldeBlur}
             name="password"
             placeholder="Password"
             required
           />
         </div>
+        {newUser && (
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="password"
+              onChange={handlePassword}
+              onBlur={hanldeBlur}
+              name="ConfirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+        )}
+
+        {newUser && password !== confirmPassword && (
+          <p className="text-danger">Password doesn't match</p>
+        )}
 
         <div className="form-group">
           <input
